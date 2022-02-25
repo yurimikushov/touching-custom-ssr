@@ -1,0 +1,47 @@
+{
+  "name": "touching-custom-ssr",
+  "version": "0.0.0",
+  "scripts": {
+    "build:client": "webpack --mode production --config webpack/client.webpack.config.ts",
+    "build:server": "webpack --mode production --config webpack/server.webpack.config.ts",
+    "start:client": "webpack-dev-server --mode development --config webpack/client.webpack.config.ts",
+    "build": "npm run build:client && npm run build:server",
+    "start": "npm run build && node ./build/main.js"
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "pug": "^3.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
+    "@types/express": "^4.17.13",
+    "@types/html-webpack-plugin": "^3.2.6",
+    "@types/pug": "^2.0.6",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.11",
+    "@types/webpack-dev-server": "^4.7.2",
+    "babel-loader": "^8.2.3",
+    "copy-webpack-plugin": "^10.2.4",
+    "css-loader": "^6.6.0",
+    "css-minimizer-webpack-plugin": "^3.4.1",
+    "html-webpack-plugin": "^5.5.0",
+    "html-webpack-pug-plugin": "^4.0.0",
+    "mini-css-extract-plugin": "^2.5.3",
+    "null-loader": "^4.0.1",
+    "postcss": "^8.4.7",
+    "postcss-loader": "^6.2.1",
+    "postcss-preset-env": "^7.4.1",
+    "style-loader": "^3.3.1",
+    "terser-webpack-plugin": "^5.3.1",
+    "ts-node": "^10.5.0",
+    "typescript": "^4.5.5",
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4",
+    "webpack-merge": "^5.8.0"
+  }
+}
