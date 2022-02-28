@@ -45,6 +45,7 @@ const getClientConfig = (
         title: target === 'ssr' ? 'Rendered by SSR' : 'Rendered by CSR',
         template: path.join(ROOT, 'src', 'index.html'),
         publicPath: dirPath,
+        minify: !IS_DEV,
       }),
       ...(IS_DEV
         ? []

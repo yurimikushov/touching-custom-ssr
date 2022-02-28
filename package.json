@@ -2,10 +2,12 @@
   "name": "touching-custom-ssr",
   "version": "0.0.0",
   "scripts": {
-    "build:csr": "webpack --mode production --config webpack/csr.webpack.config.ts",
-    "build:ssr": "webpack --mode production --config webpack/ssr.webpack.config.ts",
-    "start:csr": "webpack-dev-server --mode development --config webpack/csr.webpack.config.ts --history-api-fallback",
-    "start:ssr": "npm run build:ssr && node ./build/main.js"
+    "build:dev:csr": "cross-env NODE_ENV=development webpack --config webpack/csr.webpack.config.ts",
+    "build:prod:csr": "cross-env NODE_ENV=production webpack --config webpack/csr.webpack.config.ts",
+    "build:dev:ssr": "cross-env NODE_ENV=development webpack --config webpack/ssr.webpack.config.ts",
+    "build:prod:ssr": "cross-env NODE_ENV=production webpack --config webpack/ssr.webpack.config.ts",
+    "start:dev:csr": "cross-env NODE_ENV=development webpack-dev-server --config webpack/csr.webpack.config.ts --history-api-fallback",
+    "start:prod:ssr": "npm run build:prod:ssr && node ./build/main.js"
   },
   "dependencies": {
     "@loadable/component": "^5.15.2",
@@ -30,6 +32,7 @@
     "@types/react-dom": "^17.0.11",
     "@types/webpack-dev-server": "^4.7.2",
     "babel-loader": "^8.2.3",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.6.0",
     "css-minimizer-webpack-plugin": "^3.4.1",
     "html-webpack-plugin": "^5.5.0",

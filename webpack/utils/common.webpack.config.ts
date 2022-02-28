@@ -4,6 +4,7 @@ const IS_DEV = process.env.NODE_ENV === 'development'
 
 const getCommonConfig = (): Configuration => {
   return {
+    target: process.env.NODE_ENV ?? 'production',
     resolve: {
       extensions: ['.tsx', '.ts', '.js'],
     },
