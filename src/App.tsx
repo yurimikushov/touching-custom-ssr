@@ -1,9 +1,29 @@
 import { Route, Routes } from 'react-router-dom'
-import Home from './pages/Home'
-import About from './pages/About'
-import Error404 from './pages/404'
+import loadable from '@loadable/component'
+import Loader from './components/Loader'
 import routes from './routes'
 import './App.css'
+
+const Home = loadable(
+  () => import(/*webpackChunkName: "home-page" */ './pages/Home'),
+  {
+    fallback: <Loader />,
+  }
+)
+
+const About = loadable(
+  () => import(/*webpackChunkName: "about-page" */ './pages/About'),
+  {
+    fallback: <Loader />,
+  }
+)
+
+const Error404 = loadable(
+  () => import(/*webpackChunkName: "404-page" */ './pages/404'),
+  {
+    fallback: <Loader />,
+  }
+)
 
 const App = () => {
   return (

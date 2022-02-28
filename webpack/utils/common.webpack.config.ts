@@ -26,6 +26,7 @@ const getCommonConfig = (): Configuration => {
                 '@babel/preset-react',
                 '@babel/preset-typescript',
               ],
+              plugins: ['@loadable/babel-plugin'],
             },
           },
         },
