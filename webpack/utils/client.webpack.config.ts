@@ -43,6 +43,7 @@ const getClientConfig = (
     },
     plugins: [
       new HtmlWebpackPlugin({
+        title: target === 'ssr' ? 'Rendered by SSR' : 'Rendered by SSR',
         template: path.join(ROOT, 'src', 'index.html'),
         publicPath: dirPath,
       }),
