@@ -15,11 +15,6 @@ const getServerConfig = (dirPath = ''): Configuration => {
       // clean: true,
     },
     target: 'node',
-    plugins: [
-      new CopyPlugin({
-        patterns: [{ from: 'src/views', to: 'views' }],
-      }),
-    ],
     module: {
       rules: [
         {

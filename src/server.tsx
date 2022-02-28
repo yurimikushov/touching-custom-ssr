@@ -1,5 +1,6 @@
 import express from 'express'
 import { renderToString } from 'react-dom/server'
+import { StaticRouter } from 'react-router-dom/server'
 import fs from 'fs'
 import path from 'path'
 import App from './App'
@@ -12,7 +13,11 @@ const app = express()
 app.use('/static', express.static(path.join(__dirname, 'static')))
 
 app.get('*', (req, res) => {
-  const content = renderToString(<App />)
+  const content = renderToString(
+    <StaticRouter location={req.url}>
+      <App />
+    </StaticRouter>
+  )
 
   const template = fs
     .readFileSync(path.join(__dirname, 'static', 'index.html'), 'utf8')

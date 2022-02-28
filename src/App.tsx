@@ -1,37 +1,17 @@
-import { useEffect, useState } from 'react'
+import { Route, Routes } from 'react-router-dom'
+import Home from './pages/Home'
+import About from './pages/About'
+import Error404 from './pages/404'
+import routes from './routes'
 import './App.css'
-
-const Greeting = () => {
-  return <h1>Hello world!</h1>
-}
-
-const Counter = () => {
-  const [count, setCount] = useState(0)
-
-  useEffect(() => {
-    if (count > 10) {
-      setCount(0)
-    }
-  }, [count])
-
-  const handleIncrement = () => {
-    setCount(count => count + 1)
-  }
-
-  return (
-    <div>
-      <div>Count: {count}</div>
-      <button onClick={handleIncrement}>Increment</button>
-    </div>
-  )
-}
 
 const App = () => {
   return (
-    <>
-      <Greeting />
-      <Counter />
-    </>
+    <Routes>
+      <Route path={routes.home} element={<Home />} />
+      <Route path={routes.about} element={<About />} />
+      <Route path='*' element={<Error404 />} />
+    </Routes>
   )
 }
 
