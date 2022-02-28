@@ -17,7 +17,7 @@ app.get('*', (req, res) => {
   const template = fs
     .readFileSync(path.join(__dirname, 'static', 'index.html'), 'utf8')
     .toString()
-    .replace('<div id="root"></div>', ` <div id="root">${content}</div>`)
+    .replace('<div id="root"></div>', `<div id="root">${content}</div>`)
 
   res.setHeader('Content-Type', 'text/html')
   res.end(template)
