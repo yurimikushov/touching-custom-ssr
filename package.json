@@ -2,11 +2,10 @@
   "name": "touching-custom-ssr",
   "version": "0.0.0",
   "scripts": {
-    "build:client": "webpack --mode production --config webpack/client.webpack.config.ts",
-    "build:server": "webpack --mode production --config webpack/server.webpack.config.ts",
-    "start:client": "webpack-dev-server --mode development --config webpack/client.webpack.config.ts",
-    "build": "npm run build:client && npm run build:server",
-    "start": "npm run build && node ./build/main.js"
+    "build:csr": "webpack --mode production --config webpack/csr.webpack.config.ts",
+    "build:ssr": "webpack --mode production --config webpack/ssr.webpack.config.ts",
+    "start:csr": "webpack-dev-server --mode development --config webpack/csr.webpack.config.ts",
+    "start:ssr": "npm run build:ssr && node ./build/main.js"
   },
   "dependencies": {
     "express": "^4.17.3",
