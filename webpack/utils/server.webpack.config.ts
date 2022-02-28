@@ -1,6 +1,5 @@
 import { Configuration } from 'webpack'
 import merge from 'webpack-merge'
-import CopyPlugin from 'copy-webpack-plugin'
 import path from 'path'
 import { getCommonConfig } from './common.webpack.config'
 
