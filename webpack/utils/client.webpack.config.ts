@@ -1,7 +1,6 @@
 import { Configuration } from 'webpack'
 import merge from 'webpack-merge'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-// import HtmlWebpackPugPlugin from 'html-webpack-pug-plugin'
 import TerserPlugin from 'terser-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
@@ -47,7 +46,6 @@ const getClientConfig = (
         template: path.join(ROOT, 'src', 'index.html'),
         publicPath: dirPath,
       }),
-      // new HtmlWebpackPugPlugin(),
       ...(IS_DEV
         ? []
         : [new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' })]),
