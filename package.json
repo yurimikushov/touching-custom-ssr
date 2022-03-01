@@ -9,8 +9,8 @@
     "start:dev:csr": "cross-env NODE_ENV=development webpack-dev-server --config webpack/csr.webpack.config.ts --history-api-fallback",
     "start:prod:ssr": "npm run build:prod:ssr && node ./build/main.js",
     "build:docker-image:prod:ssr": "docker build -t touching-custom-ssr .",
-    "start:docker:prod:ssr": "docker run -d -p 3000:3000 --name touching-custom-ssr --rm touching-custom-ssr",
-    "stop:docker:prod:ssr": "docker stop touching-custom-ssr"
+    "start:docker:prod:ssr": "docker-compose up -d",
+    "stop:docker:prod:ssr": "docker-compose down"
   },
   "dependencies": {
     "@loadable/component": "^5.15.2",

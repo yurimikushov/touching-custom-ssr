@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+  touching-custom-ssr:
+    image: 'touching-custom-ssr'
+    command: npm run start:prod:ssr
+    ports:
+      - 3000:3000
+    working_dir: /app
